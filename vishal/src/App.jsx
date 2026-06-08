@@ -1,21 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Home from "./components/Pages/Home";
+import About from "./components/Pages/About";
+import Contact from "./components/Pages/Contact";
+import"./App.css";
+import Footer from "./components/Footer";
 import Categories from "./components/Categories";
+import Hero from "./components/Hero";
 import ProductCards from "./components/ProductCards";
 import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
-import "./App.css";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <Hero />
-      <Categories />
-      <ProductCards />
-      <Testimonials />
-      <Footer />
-    </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   );
 }
 
